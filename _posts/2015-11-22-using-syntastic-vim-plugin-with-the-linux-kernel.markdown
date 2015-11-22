@@ -206,7 +206,7 @@ The final version should look like this:
 We have to save this into a file named `.syntastic_c_config` and reference it in our `.vimrc` (or `.vimrc.after`, in the case of [Janus](https://github.com/carlhuda/janus), a Vim distro that I'm using):
 
 
-{% highlight vimscript %}
+{% highlight bash %}
     let g:syntastic_c_config_file = '.syntastic_c_config'
 {% endhighlight %}
 
@@ -215,12 +215,12 @@ By default, Syntastic starts looking for a config file in the current folder, th
 
 Also, there are two more features that can cause Syntastic not to work properly with the Linux kernel. By default, it adds `-I. -I.. -Iinclude -Iincludes -I../include -I../includes` to the parameters it passes to `gcc`. Although this may do no harm, it can be deactivated with the following option:
 
-{% highlight vimscript %}
+{% highlight bash %}
     let g:syntastic_c_no_default_include_dirs = 1
 {% endhighlight %}
 Secondly, Syntastic adds the flag `-std=gnu99`, which has the possibility to cause problems. To disable it, use the option:
 
-{% highlight vimscript %}
+{% highlight bash %}
     let g:syntastic_c_compiler_options = ''
 {% endhighlight %}
 
